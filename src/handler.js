@@ -69,8 +69,26 @@ const addBookHandler = (request, h) => {
   return response;
 };
 
-const getAllBooksHandler = () => {
-  const allBooks = books.map((book) => ({
+const getAllBooksHandler = (request, h) => {
+  const {name, reading, finished} = request.query;
+
+  let allBooks = books;
+
+  if (name !== undefined) {
+    allBooks = allBooks.filter((book) => {
+      return (new RegExp(name, 'i')).test(book.name);
+    });
+  }
+
+  if (reading !== undefined) {
+    allBooks = allBooks.filter((book) => book.reading == reading);
+  }
+
+  if (finished !== undefined) {
+    allBooks = allBooks.filter((book) => book.finished == finished);
+  }
+
+  allBooks = allBooks.map((book) => ({
     id: book.id,
     name: book.name,
     publisher: book.publisher,
