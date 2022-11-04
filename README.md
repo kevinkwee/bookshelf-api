@@ -1,6 +1,6 @@
 # Bookshelf API
 
-A RESTful API built with Node.JS and Hapi framework. This project is my submission for Belajar Membuat Aplikasi Back-End untuk Pemula class at Dicoding.
+A RESTful API built with Node.JS and Hapi framework. This project is my submission for Belajar Membuat Aplikasi Back-End untuk Pemula course at Dicoding.
 
 ## Usage
 Requires Node.JS >= v14.17.0
